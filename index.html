@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Market Store Locator</title>
+  <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+	<div id="left-side">
+	  <div class="search-section">
+		<label class="field-label">Search by city:</label><br>
+		<select id="city-select" class="field dropdown"></select>
+	  </div>
+	  <div class="or">
+		  <p style="margin-top:0;padding-top:0;font-weight:900;width:100%;">Or </p>
+	  </div>
+	  <div class="search-section">
+		<label class="field-label">Enter a zip code and search radius:</label><br>
+		<input type="text" id="zip" class="field" name="zip" placeholder="-Enter Zip Code-" maxlength="5">
+		<select id="maxDistance" class="field dropdown">
+		  <option value="10">10 Miles</option>
+		  <option value="25">25 Miles</option>
+		  <option value="50">50 Miles</option>
+		</select>
+		<br>
+		<div id="zip-error" class="error"></div><br>
+		<label>Only show stores with:</label><br>
+		<div class="checkbox"><input type="checkbox" name="services" value="Beer"><label>Beer & Wine</label></div>
+		<div class="checkbox"><input type="checkbox" name="services" value="Liquor"><label>Liquor</label></div>
+		<div class="checkbox"><input type="checkbox" name="services" value="Fuel"><label>Fuel</label></div>
+		<div style="clear:both;"></div>
+
+		<button id="submit" class="submit-buttons">SEARCH</button>    
+	  
+
+		<button id="all" class="submit-buttons">SHOW ALL</button>
+
+		<div id="other-error" class="error"></div>
+	  </div>
+	</div><!--end left-side -->
+  
+	<div id="list"></div>
+
+	<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&callback=initMap" async defer></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
